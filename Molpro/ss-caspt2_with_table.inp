@@ -1,0 +1,3073 @@
+*** 3pi-pi4*-->3pi-pi2*
+memory,1000,m
+gprint,orbitals=5,civector
+symmetry,nosym
+geometry={
+ n
+ c      1 cn2
+ n      2 nc3          1 ncn3
+ c      3 cn4          2 cnc4         1 dih4
+ c      4 cc5          3 ccn5         2 dih5
+ c      1 cn6          2 cnc6         3 dih6
+ c      5 cc7          4 ccc7         3 dih7
+ o      4 oc8          3 ocn8         2 dih8
+ s      2 sc9          1 scn9         6 dih9
+ h      7 hc10         5 hcc10        4 dih10
+ h      7 hc11         5 hcc11        4 dih11
+ h      7 hc12         5 hcc12        4 dih12
+ h      3 hn13         2 hnc13        1 dih13
+ h      1 hn14         2 hnc14        3 dih14
+ h      6 hc15         1 hcn15        2 dih15
+}
+
+cn2=        1.353912 ANG
+nc3=        1.362633 ANG
+ncn3=        115.559000 DEGREE
+cn4=        1.398141 ANG
+cnc4=        126.330000 DEGREE
+dih4=        -14.939000 DEGREE
+cc5=        1.446177 ANG
+ccn5=        115.172000 DEGREE
+dih5=        9.961000 DEGREE
+cn6=        1.391805 ANG
+cnc6=        125.148000 DEGREE
+dih6=        356.549000 DEGREE
+cc7=        1.492180 ANG
+ccc7=        121.993000 DEGREE
+dih7=        196.802000 DEGREE
+oc8=        1.209720 ANG
+ocn8=        120.044000 DEGREE
+dih8=        192.733000 DEGREE
+sc9=        1.658756 ANG
+scn9=        122.213000 DEGREE
+dih9=        175.548000 DEGREE
+hc10=        1.087675 ANG
+hcc10=        110.266000 DEGREE
+dih10=        116.748000 DEGREE
+hc11=        1.080687 ANG
+hcc11=        110.846000 DEGREE
+dih11=        355.740000 DEGREE
+hc12=        1.087323 ANG
+hcc12=        110.719000 DEGREE
+dih12=        235.115000 DEGREE
+hn13=        0.996110 ANG
+hnc13=        116.046000 DEGREE
+dih13=        180.415000 DEGREE
+hn14=        0.995384 ANG
+hnc14=        114.679000 DEGREE
+dih14=        186.901000 DEGREE
+hc15=        1.079662 ANG
+hcn15=        116.171000 DEGREE
+dih15=        237.196000 DEGREE
+
+basis=6-31G**
+
+hf
+
+put,molden,2tThy_T1_dbl-well_2s-3t_hf.mld
+
+!{locali,pipek
+!occ,42
+!}
+
+!put,molden,2tThy_T1_dbl-well_2s-3t_local.mld
+
+{multi
+!start,2100.2,local
+occ,40
+closed,30
+rotate,31.1,26.1,0.0
+rotate,32.1,30.1,0.0
+rotate,40.1,43.1,0.0
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+}
+
+s0(1) = energy(1)
+s1(1) = energy(2)
+t1(1) = energy(3)
+t2(1) = energy(4)
+t3(1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_cas.mld
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(1) = energy(1)
+
+cn2=        1.355147 ANG
+nc3=        1.363949 ANG
+ncn3=        115.464621 DEGREE
+cn4=        1.397451 ANG
+cnc4=        126.337414 DEGREE
+dih4=        -13.843448 DEGREE
+cc5=        1.447153 ANG
+ccn5=        115.180552 DEGREE
+dih5=        9.292552 DEGREE
+cn6=        1.391272 ANG
+cnc6=        125.056552 DEGREE
+dih6=        356.119828 DEGREE
+cc7=        1.492537 ANG
+ccc7=        121.863172 DEGREE
+dih7=        196.268517 DEGREE
+oc8=        1.209617 ANG
+ocn8=        120.073000 DEGREE
+dih8=        192.001000 DEGREE
+sc9=        1.664265 ANG
+scn9=        121.854897 DEGREE
+dih9=        176.807931 DEGREE
+hc10=        1.087564 ANG
+hcc10=        110.287862 DEGREE
+dih10=        114.773310 DEGREE
+hc11=        1.080813 ANG
+hcc11=        110.846586 DEGREE
+dih11=        353.836000 DEGREE
+hc12=        1.087222 ANG
+hcc12=        110.722931 DEGREE
+dih12=        233.215000 DEGREE
+hn13=        0.996079 ANG
+hnc13=        116.088069 DEGREE
+dih13=        180.563069 DEGREE
+hn14=        0.995296 ANG
+hnc14=        114.730724 DEGREE
+dih14=        186.772828 DEGREE
+hc15=        1.079456 ANG
+hcn15=        116.131483 DEGREE
+dih15=        235.500690 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(1+1) = energy(1)
+s1(1+1) = energy(2)
+t1(1+1) = energy(3)
+t2(1+1) = energy(4)
+t3(1+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_1.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(1+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(1+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(1+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(1+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(1+1) = energy(1)
+
+cn2=        1.356382 ANG
+nc3=        1.365265 ANG
+ncn3=        115.370242 DEGREE
+cn4=        1.396761 ANG
+cnc4=        126.344828 DEGREE
+dih4=        -12.747896 DEGREE
+cc5=        1.448129 ANG
+ccn5=        115.189104 DEGREE
+dih5=        8.624104 DEGREE
+cn6=        1.390739 ANG
+cnc6=        124.965104 DEGREE
+dih6=        355.690656 DEGREE
+cc7=        1.492894 ANG
+ccc7=        121.733344 DEGREE
+dih7=        195.735034 DEGREE
+oc8=        1.209514 ANG
+ocn8=        120.102000 DEGREE
+dih8=        191.269000 DEGREE
+sc9=        1.669774 ANG
+scn9=        121.496794 DEGREE
+dih9=        178.067862 DEGREE
+hc10=        1.087453 ANG
+hcc10=        110.309724 DEGREE
+dih10=        112.798620 DEGREE
+hc11=        1.080939 ANG
+hcc11=        110.847172 DEGREE
+dih11=        351.932000 DEGREE
+hc12=        1.087121 ANG
+hcc12=        110.726862 DEGREE
+dih12=        231.315000 DEGREE
+hn13=        0.996048 ANG
+hnc13=        116.130138 DEGREE
+dih13=        180.711138 DEGREE
+hn14=        0.995208 ANG
+hnc14=        114.782448 DEGREE
+dih14=        186.644656 DEGREE
+hc15=        1.079250 ANG
+hcn15=        116.091966 DEGREE
+dih15=        233.805380 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(2+1) = energy(1)
+s1(2+1) = energy(2)
+t1(2+1) = energy(3)
+t2(2+1) = energy(4)
+t3(2+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_2.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(2+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(2+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(2+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(2+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(2+1) = energy(1)
+
+cn2=        1.357617 ANG
+nc3=        1.366581 ANG
+ncn3=        115.275863 DEGREE
+cn4=        1.396071 ANG
+cnc4=        126.352242 DEGREE
+dih4=        -11.652344 DEGREE
+cc5=        1.449105 ANG
+ccn5=        115.197656 DEGREE
+dih5=        7.955656 DEGREE
+cn6=        1.390206 ANG
+cnc6=        124.873656 DEGREE
+dih6=        355.261484 DEGREE
+cc7=        1.493251 ANG
+ccc7=        121.603516 DEGREE
+dih7=        195.201551 DEGREE
+oc8=        1.209411 ANG
+ocn8=        120.131000 DEGREE
+dih8=        190.537000 DEGREE
+sc9=        1.675283 ANG
+scn9=        121.138691 DEGREE
+dih9=        179.327793 DEGREE
+hc10=        1.087342 ANG
+hcc10=        110.331586 DEGREE
+dih10=        110.823930 DEGREE
+hc11=        1.081065 ANG
+hcc11=        110.847758 DEGREE
+dih11=        350.028000 DEGREE
+hc12=        1.087020 ANG
+hcc12=        110.730793 DEGREE
+dih12=        229.415000 DEGREE
+hn13=        0.996017 ANG
+hnc13=        116.172207 DEGREE
+dih13=        180.859207 DEGREE
+hn14=        0.995120 ANG
+hnc14=        114.834172 DEGREE
+dih14=        186.516484 DEGREE
+hc15=        1.079044 ANG
+hcn15=        116.052449 DEGREE
+dih15=        232.110070 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(3+1) = energy(1)
+s1(3+1) = energy(2)
+t1(3+1) = energy(3)
+t2(3+1) = energy(4)
+t3(3+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_3.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(3+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(3+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(3+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(3+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(3+1) = energy(1)
+
+cn2=        1.358852 ANG
+nc3=        1.367897 ANG
+ncn3=        115.181484 DEGREE
+cn4=        1.395381 ANG
+cnc4=        126.359656 DEGREE
+dih4=        -10.556792 DEGREE
+cc5=        1.450081 ANG
+ccn5=        115.206208 DEGREE
+dih5=        7.287208 DEGREE
+cn6=        1.389673 ANG
+cnc6=        124.782208 DEGREE
+dih6=        354.832312 DEGREE
+cc7=        1.493608 ANG
+ccc7=        121.473688 DEGREE
+dih7=        194.668068 DEGREE
+oc8=        1.209308 ANG
+ocn8=        120.160000 DEGREE
+dih8=        189.805000 DEGREE
+sc9=        1.680792 ANG
+scn9=        120.780588 DEGREE
+dih9=        180.587724 DEGREE
+hc10=        1.087231 ANG
+hcc10=        110.353448 DEGREE
+dih10=        108.849240 DEGREE
+hc11=        1.081191 ANG
+hcc11=        110.848344 DEGREE
+dih11=        348.124000 DEGREE
+hc12=        1.086919 ANG
+hcc12=        110.734724 DEGREE
+dih12=        227.515000 DEGREE
+hn13=        0.995986 ANG
+hnc13=        116.214276 DEGREE
+dih13=        181.007276 DEGREE
+hn14=        0.995032 ANG
+hnc14=        114.885896 DEGREE
+dih14=        186.388312 DEGREE
+hc15=        1.078838 ANG
+hcn15=        116.012932 DEGREE
+dih15=        230.414760 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(4+1) = energy(1)
+s1(4+1) = energy(2)
+t1(4+1) = energy(3)
+t2(4+1) = energy(4)
+t3(4+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_4.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(4+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(4+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(4+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(4+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(4+1) = energy(1)
+
+cn2=        1.360087 ANG
+nc3=        1.369213 ANG
+ncn3=        115.087105 DEGREE
+cn4=        1.394691 ANG
+cnc4=        126.367070 DEGREE
+dih4=        -9.461240 DEGREE
+cc5=        1.451057 ANG
+ccn5=        115.214760 DEGREE
+dih5=        6.618760 DEGREE
+cn6=        1.389140 ANG
+cnc6=        124.690760 DEGREE
+dih6=        354.403140 DEGREE
+cc7=        1.493965 ANG
+ccc7=        121.343860 DEGREE
+dih7=        194.134585 DEGREE
+oc8=        1.209205 ANG
+ocn8=        120.189000 DEGREE
+dih8=        189.073000 DEGREE
+sc9=        1.686301 ANG
+scn9=        120.422485 DEGREE
+dih9=        181.847655 DEGREE
+hc10=        1.087120 ANG
+hcc10=        110.375310 DEGREE
+dih10=        106.874550 DEGREE
+hc11=        1.081317 ANG
+hcc11=        110.848930 DEGREE
+dih11=        346.220000 DEGREE
+hc12=        1.086818 ANG
+hcc12=        110.738655 DEGREE
+dih12=        225.615000 DEGREE
+hn13=        0.995955 ANG
+hnc13=        116.256345 DEGREE
+dih13=        181.155345 DEGREE
+hn14=        0.994944 ANG
+hnc14=        114.937620 DEGREE
+dih14=        186.260140 DEGREE
+hc15=        1.078632 ANG
+hcn15=        115.973415 DEGREE
+dih15=        228.719450 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(5+1) = energy(1)
+s1(5+1) = energy(2)
+t1(5+1) = energy(3)
+t2(5+1) = energy(4)
+t3(5+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_5.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(5+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(5+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(5+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(5+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(5+1) = energy(1)
+
+cn2=        1.361322 ANG
+nc3=        1.370529 ANG
+ncn3=        114.992726 DEGREE
+cn4=        1.394001 ANG
+cnc4=        126.374484 DEGREE
+dih4=        -8.365688 DEGREE
+cc5=        1.452033 ANG
+ccn5=        115.223312 DEGREE
+dih5=        5.950312 DEGREE
+cn6=        1.388607 ANG
+cnc6=        124.599312 DEGREE
+dih6=        353.973968 DEGREE
+cc7=        1.494322 ANG
+ccc7=        121.214032 DEGREE
+dih7=        193.601102 DEGREE
+oc8=        1.209102 ANG
+ocn8=        120.218000 DEGREE
+dih8=        188.341000 DEGREE
+sc9=        1.691810 ANG
+scn9=        120.064382 DEGREE
+dih9=        183.107586 DEGREE
+hc10=        1.087009 ANG
+hcc10=        110.397172 DEGREE
+dih10=        104.899860 DEGREE
+hc11=        1.081443 ANG
+hcc11=        110.849516 DEGREE
+dih11=        344.316000 DEGREE
+hc12=        1.086717 ANG
+hcc12=        110.742586 DEGREE
+dih12=        223.715000 DEGREE
+hn13=        0.995924 ANG
+hnc13=        116.298414 DEGREE
+dih13=        181.303414 DEGREE
+hn14=        0.994856 ANG
+hnc14=        114.989344 DEGREE
+dih14=        186.131968 DEGREE
+hc15=        1.078426 ANG
+hcn15=        115.933898 DEGREE
+dih15=        227.024140 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(6+1) = energy(1)
+s1(6+1) = energy(2)
+t1(6+1) = energy(3)
+t2(6+1) = energy(4)
+t3(6+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_6.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(6+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(6+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(6+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(6+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(6+1) = energy(1)
+
+cn2=        1.362557 ANG
+nc3=        1.371845 ANG
+ncn3=        114.898347 DEGREE
+cn4=        1.393311 ANG
+cnc4=        126.381898 DEGREE
+dih4=        -7.270136 DEGREE
+cc5=        1.453009 ANG
+ccn5=        115.231864 DEGREE
+dih5=        5.281864 DEGREE
+cn6=        1.388074 ANG
+cnc6=        124.507864 DEGREE
+dih6=        353.544796 DEGREE
+cc7=        1.494679 ANG
+ccc7=        121.084204 DEGREE
+dih7=        193.067619 DEGREE
+oc8=        1.208999 ANG
+ocn8=        120.247000 DEGREE
+dih8=        187.609000 DEGREE
+sc9=        1.697319 ANG
+scn9=        119.706279 DEGREE
+dih9=        184.367517 DEGREE
+hc10=        1.086898 ANG
+hcc10=        110.419034 DEGREE
+dih10=        102.925170 DEGREE
+hc11=        1.081569 ANG
+hcc11=        110.850102 DEGREE
+dih11=        342.412000 DEGREE
+hc12=        1.086616 ANG
+hcc12=        110.746517 DEGREE
+dih12=        221.815000 DEGREE
+hn13=        0.995893 ANG
+hnc13=        116.340483 DEGREE
+dih13=        181.451483 DEGREE
+hn14=        0.994768 ANG
+hnc14=        115.041068 DEGREE
+dih14=        186.003796 DEGREE
+hc15=        1.078220 ANG
+hcn15=        115.894381 DEGREE
+dih15=        225.328830 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(7+1) = energy(1)
+s1(7+1) = energy(2)
+t1(7+1) = energy(3)
+t2(7+1) = energy(4)
+t3(7+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_7.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(7+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(7+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(7+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(7+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(7+1) = energy(1)
+
+cn2=        1.363792 ANG
+nc3=        1.373161 ANG
+ncn3=        114.803968 DEGREE
+cn4=        1.392621 ANG
+cnc4=        126.389312 DEGREE
+dih4=        -6.174584 DEGREE
+cc5=        1.453985 ANG
+ccn5=        115.240416 DEGREE
+dih5=        4.613416 DEGREE
+cn6=        1.387541 ANG
+cnc6=        124.416416 DEGREE
+dih6=        353.115624 DEGREE
+cc7=        1.495036 ANG
+ccc7=        120.954376 DEGREE
+dih7=        192.534136 DEGREE
+oc8=        1.208896 ANG
+ocn8=        120.276000 DEGREE
+dih8=        186.877000 DEGREE
+sc9=        1.702828 ANG
+scn9=        119.348176 DEGREE
+dih9=        185.627448 DEGREE
+hc10=        1.086787 ANG
+hcc10=        110.440896 DEGREE
+dih10=        100.950480 DEGREE
+hc11=        1.081695 ANG
+hcc11=        110.850688 DEGREE
+dih11=        340.508000 DEGREE
+hc12=        1.086515 ANG
+hcc12=        110.750448 DEGREE
+dih12=        219.915000 DEGREE
+hn13=        0.995862 ANG
+hnc13=        116.382552 DEGREE
+dih13=        181.599552 DEGREE
+hn14=        0.994680 ANG
+hnc14=        115.092792 DEGREE
+dih14=        185.875624 DEGREE
+hc15=        1.078014 ANG
+hcn15=        115.854864 DEGREE
+dih15=        223.633520 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(8+1) = energy(1)
+s1(8+1) = energy(2)
+t1(8+1) = energy(3)
+t2(8+1) = energy(4)
+t3(8+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_8.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(8+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(8+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(8+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(8+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(8+1) = energy(1)
+
+cn2=        1.365027 ANG
+nc3=        1.374477 ANG
+ncn3=        114.709589 DEGREE
+cn4=        1.391931 ANG
+cnc4=        126.396726 DEGREE
+dih4=        -5.079032 DEGREE
+cc5=        1.454961 ANG
+ccn5=        115.248968 DEGREE
+dih5=        3.944968 DEGREE
+cn6=        1.387008 ANG
+cnc6=        124.324968 DEGREE
+dih6=        352.686452 DEGREE
+cc7=        1.495393 ANG
+ccc7=        120.824548 DEGREE
+dih7=        192.000653 DEGREE
+oc8=        1.208793 ANG
+ocn8=        120.305000 DEGREE
+dih8=        186.145000 DEGREE
+sc9=        1.708337 ANG
+scn9=        118.990073 DEGREE
+dih9=        186.887379 DEGREE
+hc10=        1.086676 ANG
+hcc10=        110.462758 DEGREE
+dih10=        98.975790 DEGREE
+hc11=        1.081821 ANG
+hcc11=        110.851274 DEGREE
+dih11=        338.604000 DEGREE
+hc12=        1.086414 ANG
+hcc12=        110.754379 DEGREE
+dih12=        218.015000 DEGREE
+hn13=        0.995831 ANG
+hnc13=        116.424621 DEGREE
+dih13=        181.747621 DEGREE
+hn14=        0.994592 ANG
+hnc14=        115.144516 DEGREE
+dih14=        185.747452 DEGREE
+hc15=        1.077808 ANG
+hcn15=        115.815347 DEGREE
+dih15=        221.938210 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(9+1) = energy(1)
+s1(9+1) = energy(2)
+t1(9+1) = energy(3)
+t2(9+1) = energy(4)
+t3(9+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_9.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(9+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(9+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(9+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(9+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(9+1) = energy(1)
+
+cn2=        1.366262 ANG
+nc3=        1.375793 ANG
+ncn3=        114.615210 DEGREE
+cn4=        1.391241 ANG
+cnc4=        126.404140 DEGREE
+dih4=        -3.983480 DEGREE
+cc5=        1.455937 ANG
+ccn5=        115.257520 DEGREE
+dih5=        3.276520 DEGREE
+cn6=        1.386475 ANG
+cnc6=        124.233520 DEGREE
+dih6=        352.257280 DEGREE
+cc7=        1.495750 ANG
+ccc7=        120.694720 DEGREE
+dih7=        191.467170 DEGREE
+oc8=        1.208690 ANG
+ocn8=        120.334000 DEGREE
+dih8=        185.413000 DEGREE
+sc9=        1.713846 ANG
+scn9=        118.631970 DEGREE
+dih9=        188.147310 DEGREE
+hc10=        1.086565 ANG
+hcc10=        110.484620 DEGREE
+dih10=        97.001100 DEGREE
+hc11=        1.081947 ANG
+hcc11=        110.851860 DEGREE
+dih11=        336.700000 DEGREE
+hc12=        1.086313 ANG
+hcc12=        110.758310 DEGREE
+dih12=        216.115000 DEGREE
+hn13=        0.995800 ANG
+hnc13=        116.466690 DEGREE
+dih13=        181.895690 DEGREE
+hn14=        0.994504 ANG
+hnc14=        115.196240 DEGREE
+dih14=        185.619280 DEGREE
+hc15=        1.077602 ANG
+hcn15=        115.775830 DEGREE
+dih15=        220.242900 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(10+1) = energy(1)
+s1(10+1) = energy(2)
+t1(10+1) = energy(3)
+t2(10+1) = energy(4)
+t3(10+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_10.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(10+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(10+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(10+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(10+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(10+1) = energy(1)
+
+cn2=        1.367497 ANG
+nc3=        1.377109 ANG
+ncn3=        114.520831 DEGREE
+cn4=        1.390551 ANG
+cnc4=        126.411554 DEGREE
+dih4=        -2.887928 DEGREE
+cc5=        1.456913 ANG
+ccn5=        115.266072 DEGREE
+dih5=        2.608072 DEGREE
+cn6=        1.385942 ANG
+cnc6=        124.142072 DEGREE
+dih6=        351.828108 DEGREE
+cc7=        1.496107 ANG
+ccc7=        120.564892 DEGREE
+dih7=        190.933687 DEGREE
+oc8=        1.208587 ANG
+ocn8=        120.363000 DEGREE
+dih8=        184.681000 DEGREE
+sc9=        1.719355 ANG
+scn9=        118.273867 DEGREE
+dih9=        189.407241 DEGREE
+hc10=        1.086454 ANG
+hcc10=        110.506482 DEGREE
+dih10=        95.026410 DEGREE
+hc11=        1.082073 ANG
+hcc11=        110.852446 DEGREE
+dih11=        334.796000 DEGREE
+hc12=        1.086212 ANG
+hcc12=        110.762241 DEGREE
+dih12=        214.215000 DEGREE
+hn13=        0.995769 ANG
+hnc13=        116.508759 DEGREE
+dih13=        182.043759 DEGREE
+hn14=        0.994416 ANG
+hnc14=        115.247964 DEGREE
+dih14=        185.491108 DEGREE
+hc15=        1.077396 ANG
+hcn15=        115.736313 DEGREE
+dih15=        218.547590 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(11+1) = energy(1)
+s1(11+1) = energy(2)
+t1(11+1) = energy(3)
+t2(11+1) = energy(4)
+t3(11+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_11.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(11+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(11+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(11+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(11+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(11+1) = energy(1)
+
+cn2=        1.368732 ANG
+nc3=        1.378425 ANG
+ncn3=        114.426452 DEGREE
+cn4=        1.389861 ANG
+cnc4=        126.418968 DEGREE
+dih4=        -1.792376 DEGREE
+cc5=        1.457889 ANG
+ccn5=        115.274624 DEGREE
+dih5=        1.939624 DEGREE
+cn6=        1.385409 ANG
+cnc6=        124.050624 DEGREE
+dih6=        351.398936 DEGREE
+cc7=        1.496464 ANG
+ccc7=        120.435064 DEGREE
+dih7=        190.400204 DEGREE
+oc8=        1.208484 ANG
+ocn8=        120.392000 DEGREE
+dih8=        183.949000 DEGREE
+sc9=        1.724864 ANG
+scn9=        117.915764 DEGREE
+dih9=        190.667172 DEGREE
+hc10=        1.086343 ANG
+hcc10=        110.528344 DEGREE
+dih10=        93.051720 DEGREE
+hc11=        1.082199 ANG
+hcc11=        110.853032 DEGREE
+dih11=        332.892000 DEGREE
+hc12=        1.086111 ANG
+hcc12=        110.766172 DEGREE
+dih12=        212.315000 DEGREE
+hn13=        0.995738 ANG
+hnc13=        116.550828 DEGREE
+dih13=        182.191828 DEGREE
+hn14=        0.994328 ANG
+hnc14=        115.299688 DEGREE
+dih14=        185.362936 DEGREE
+hc15=        1.077190 ANG
+hcn15=        115.696796 DEGREE
+dih15=        216.852280 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(12+1) = energy(1)
+s1(12+1) = energy(2)
+t1(12+1) = energy(3)
+t2(12+1) = energy(4)
+t3(12+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_12.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(12+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(12+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(12+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(12+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(12+1) = energy(1)
+
+cn2=        1.369967 ANG
+nc3=        1.379741 ANG
+ncn3=        114.332073 DEGREE
+cn4=        1.389171 ANG
+cnc4=        126.426382 DEGREE
+dih4=        -0.696824 DEGREE
+cc5=        1.458865 ANG
+ccn5=        115.283176 DEGREE
+dih5=        1.271176 DEGREE
+cn6=        1.384876 ANG
+cnc6=        123.959176 DEGREE
+dih6=        350.969764 DEGREE
+cc7=        1.496821 ANG
+ccc7=        120.305236 DEGREE
+dih7=        189.866721 DEGREE
+oc8=        1.208381 ANG
+ocn8=        120.421000 DEGREE
+dih8=        183.217000 DEGREE
+sc9=        1.730373 ANG
+scn9=        117.557661 DEGREE
+dih9=        191.927103 DEGREE
+hc10=        1.086232 ANG
+hcc10=        110.550206 DEGREE
+dih10=        91.077030 DEGREE
+hc11=        1.082325 ANG
+hcc11=        110.853618 DEGREE
+dih11=        330.988000 DEGREE
+hc12=        1.086010 ANG
+hcc12=        110.770103 DEGREE
+dih12=        210.415000 DEGREE
+hn13=        0.995707 ANG
+hnc13=        116.592897 DEGREE
+dih13=        182.339897 DEGREE
+hn14=        0.994240 ANG
+hnc14=        115.351412 DEGREE
+dih14=        185.234764 DEGREE
+hc15=        1.076984 ANG
+hcn15=        115.657279 DEGREE
+dih15=        215.156970 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(13+1) = energy(1)
+s1(13+1) = energy(2)
+t1(13+1) = energy(3)
+t2(13+1) = energy(4)
+t3(13+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_13.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(13+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(13+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(13+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(13+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(13+1) = energy(1)
+
+cn2=        1.371202 ANG
+nc3=        1.381057 ANG
+ncn3=        114.237694 DEGREE
+cn4=        1.388481 ANG
+cnc4=        126.433796 DEGREE
+dih4=        0.398728 DEGREE
+cc5=        1.459841 ANG
+ccn5=        115.291728 DEGREE
+dih5=        0.602728 DEGREE
+cn6=        1.384343 ANG
+cnc6=        123.867728 DEGREE
+dih6=        350.540592 DEGREE
+cc7=        1.497178 ANG
+ccc7=        120.175408 DEGREE
+dih7=        189.333238 DEGREE
+oc8=        1.208278 ANG
+ocn8=        120.450000 DEGREE
+dih8=        182.485000 DEGREE
+sc9=        1.735882 ANG
+scn9=        117.199558 DEGREE
+dih9=        193.187034 DEGREE
+hc10=        1.086121 ANG
+hcc10=        110.572068 DEGREE
+dih10=        89.102340 DEGREE
+hc11=        1.082451 ANG
+hcc11=        110.854204 DEGREE
+dih11=        329.084000 DEGREE
+hc12=        1.085909 ANG
+hcc12=        110.774034 DEGREE
+dih12=        208.515000 DEGREE
+hn13=        0.995676 ANG
+hnc13=        116.634966 DEGREE
+dih13=        182.487966 DEGREE
+hn14=        0.994152 ANG
+hnc14=        115.403136 DEGREE
+dih14=        185.106592 DEGREE
+hc15=        1.076778 ANG
+hcn15=        115.617762 DEGREE
+dih15=        213.461660 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(14+1) = energy(1)
+s1(14+1) = energy(2)
+t1(14+1) = energy(3)
+t2(14+1) = energy(4)
+t3(14+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_14.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(14+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(14+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(14+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(14+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(14+1) = energy(1)
+
+cn2=        1.372437 ANG
+nc3=        1.382373 ANG
+ncn3=        114.143315 DEGREE
+cn4=        1.387791 ANG
+cnc4=        126.441210 DEGREE
+dih4=        1.494280 DEGREE
+cc5=        1.460817 ANG
+ccn5=        115.300280 DEGREE
+dih5=        -0.065720 DEGREE
+cn6=        1.383810 ANG
+cnc6=        123.776280 DEGREE
+dih6=        350.111420 DEGREE
+cc7=        1.497535 ANG
+ccc7=        120.045580 DEGREE
+dih7=        188.799755 DEGREE
+oc8=        1.208175 ANG
+ocn8=        120.479000 DEGREE
+dih8=        181.753000 DEGREE
+sc9=        1.741391 ANG
+scn9=        116.841455 DEGREE
+dih9=        194.446965 DEGREE
+hc10=        1.086010 ANG
+hcc10=        110.593930 DEGREE
+dih10=        87.127650 DEGREE
+hc11=        1.082577 ANG
+hcc11=        110.854790 DEGREE
+dih11=        327.180000 DEGREE
+hc12=        1.085808 ANG
+hcc12=        110.777965 DEGREE
+dih12=        206.615000 DEGREE
+hn13=        0.995645 ANG
+hnc13=        116.677035 DEGREE
+dih13=        182.636035 DEGREE
+hn14=        0.994064 ANG
+hnc14=        115.454860 DEGREE
+dih14=        184.978420 DEGREE
+hc15=        1.076572 ANG
+hcn15=        115.578245 DEGREE
+dih15=        211.766350 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(15+1) = energy(1)
+s1(15+1) = energy(2)
+t1(15+1) = energy(3)
+t2(15+1) = energy(4)
+t3(15+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_15.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(15+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(15+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(15+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(15+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(15+1) = energy(1)
+
+cn2=        1.373672 ANG
+nc3=        1.383689 ANG
+ncn3=        114.048936 DEGREE
+cn4=        1.387101 ANG
+cnc4=        126.448624 DEGREE
+dih4=        2.589832 DEGREE
+cc5=        1.461793 ANG
+ccn5=        115.308832 DEGREE
+dih5=        -0.734168 DEGREE
+cn6=        1.383277 ANG
+cnc6=        123.684832 DEGREE
+dih6=        349.682248 DEGREE
+cc7=        1.497892 ANG
+ccc7=        119.915752 DEGREE
+dih7=        188.266272 DEGREE
+oc8=        1.208072 ANG
+ocn8=        120.508000 DEGREE
+dih8=        181.021000 DEGREE
+sc9=        1.746900 ANG
+scn9=        116.483352 DEGREE
+dih9=        195.706896 DEGREE
+hc10=        1.085899 ANG
+hcc10=        110.615792 DEGREE
+dih10=        85.152960 DEGREE
+hc11=        1.082703 ANG
+hcc11=        110.855376 DEGREE
+dih11=        325.276000 DEGREE
+hc12=        1.085707 ANG
+hcc12=        110.781896 DEGREE
+dih12=        204.715000 DEGREE
+hn13=        0.995614 ANG
+hnc13=        116.719104 DEGREE
+dih13=        182.784104 DEGREE
+hn14=        0.993976 ANG
+hnc14=        115.506584 DEGREE
+dih14=        184.850248 DEGREE
+hc15=        1.076366 ANG
+hcn15=        115.538728 DEGREE
+dih15=        210.071040 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(16+1) = energy(1)
+s1(16+1) = energy(2)
+t1(16+1) = energy(3)
+t2(16+1) = energy(4)
+t3(16+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_16.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(16+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(16+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(16+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(16+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(16+1) = energy(1)
+
+cn2=        1.374907 ANG
+nc3=        1.385005 ANG
+ncn3=        113.954557 DEGREE
+cn4=        1.386411 ANG
+cnc4=        126.456038 DEGREE
+dih4=        3.685384 DEGREE
+cc5=        1.462769 ANG
+ccn5=        115.317384 DEGREE
+dih5=        -1.402616 DEGREE
+cn6=        1.382744 ANG
+cnc6=        123.593384 DEGREE
+dih6=        349.253076 DEGREE
+cc7=        1.498249 ANG
+ccc7=        119.785924 DEGREE
+dih7=        187.732789 DEGREE
+oc8=        1.207969 ANG
+ocn8=        120.537000 DEGREE
+dih8=        180.289000 DEGREE
+sc9=        1.752409 ANG
+scn9=        116.125249 DEGREE
+dih9=        196.966827 DEGREE
+hc10=        1.085788 ANG
+hcc10=        110.637654 DEGREE
+dih10=        83.178270 DEGREE
+hc11=        1.082829 ANG
+hcc11=        110.855962 DEGREE
+dih11=        323.372000 DEGREE
+hc12=        1.085606 ANG
+hcc12=        110.785827 DEGREE
+dih12=        202.815000 DEGREE
+hn13=        0.995583 ANG
+hnc13=        116.761173 DEGREE
+dih13=        182.932173 DEGREE
+hn14=        0.993888 ANG
+hnc14=        115.558308 DEGREE
+dih14=        184.722076 DEGREE
+hc15=        1.076160 ANG
+hcn15=        115.499211 DEGREE
+dih15=        208.375730 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(17+1) = energy(1)
+s1(17+1) = energy(2)
+t1(17+1) = energy(3)
+t2(17+1) = energy(4)
+t3(17+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_17.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(17+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(17+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(17+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(17+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(17+1) = energy(1)
+
+cn2=        1.376142 ANG
+nc3=        1.386321 ANG
+ncn3=        113.860178 DEGREE
+cn4=        1.385721 ANG
+cnc4=        126.463452 DEGREE
+dih4=        4.780936 DEGREE
+cc5=        1.463745 ANG
+ccn5=        115.325936 DEGREE
+dih5=        -2.071064 DEGREE
+cn6=        1.382211 ANG
+cnc6=        123.501936 DEGREE
+dih6=        348.823904 DEGREE
+cc7=        1.498606 ANG
+ccc7=        119.656096 DEGREE
+dih7=        187.199306 DEGREE
+oc8=        1.207866 ANG
+ocn8=        120.566000 DEGREE
+dih8=        179.557000 DEGREE
+sc9=        1.757918 ANG
+scn9=        115.767146 DEGREE
+dih9=        198.226758 DEGREE
+hc10=        1.085677 ANG
+hcc10=        110.659516 DEGREE
+dih10=        81.203580 DEGREE
+hc11=        1.082955 ANG
+hcc11=        110.856548 DEGREE
+dih11=        321.468000 DEGREE
+hc12=        1.085505 ANG
+hcc12=        110.789758 DEGREE
+dih12=        200.915000 DEGREE
+hn13=        0.995552 ANG
+hnc13=        116.803242 DEGREE
+dih13=        183.080242 DEGREE
+hn14=        0.993800 ANG
+hnc14=        115.610032 DEGREE
+dih14=        184.593904 DEGREE
+hc15=        1.075954 ANG
+hcn15=        115.459694 DEGREE
+dih15=        206.680420 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(18+1) = energy(1)
+s1(18+1) = energy(2)
+t1(18+1) = energy(3)
+t2(18+1) = energy(4)
+t3(18+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_18.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(18+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(18+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(18+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(18+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(18+1) = energy(1)
+
+cn2=        1.377377 ANG
+nc3=        1.387637 ANG
+ncn3=        113.765799 DEGREE
+cn4=        1.385031 ANG
+cnc4=        126.470866 DEGREE
+dih4=        5.876488 DEGREE
+cc5=        1.464721 ANG
+ccn5=        115.334488 DEGREE
+dih5=        -2.739512 DEGREE
+cn6=        1.381678 ANG
+cnc6=        123.410488 DEGREE
+dih6=        348.394732 DEGREE
+cc7=        1.498963 ANG
+ccc7=        119.526268 DEGREE
+dih7=        186.665823 DEGREE
+oc8=        1.207763 ANG
+ocn8=        120.595000 DEGREE
+dih8=        178.825000 DEGREE
+sc9=        1.763427 ANG
+scn9=        115.409043 DEGREE
+dih9=        199.486689 DEGREE
+hc10=        1.085566 ANG
+hcc10=        110.681378 DEGREE
+dih10=        79.228890 DEGREE
+hc11=        1.083081 ANG
+hcc11=        110.857134 DEGREE
+dih11=        319.564000 DEGREE
+hc12=        1.085404 ANG
+hcc12=        110.793689 DEGREE
+dih12=        199.015000 DEGREE
+hn13=        0.995521 ANG
+hnc13=        116.845311 DEGREE
+dih13=        183.228311 DEGREE
+hn14=        0.993712 ANG
+hnc14=        115.661756 DEGREE
+dih14=        184.465732 DEGREE
+hc15=        1.075748 ANG
+hcn15=        115.420177 DEGREE
+dih15=        204.985110 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(19+1) = energy(1)
+s1(19+1) = energy(2)
+t1(19+1) = energy(3)
+t2(19+1) = energy(4)
+t3(19+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_19.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(19+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(19+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(19+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(19+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(19+1) = energy(1)
+
+cn2=        1.378612 ANG
+nc3=        1.388953 ANG
+ncn3=        113.671420 DEGREE
+cn4=        1.384341 ANG
+cnc4=        126.478280 DEGREE
+dih4=        6.972040 DEGREE
+cc5=        1.465697 ANG
+ccn5=        115.343040 DEGREE
+dih5=        -3.407960 DEGREE
+cn6=        1.381145 ANG
+cnc6=        123.319040 DEGREE
+dih6=        347.965560 DEGREE
+cc7=        1.499320 ANG
+ccc7=        119.396440 DEGREE
+dih7=        186.132340 DEGREE
+oc8=        1.207660 ANG
+ocn8=        120.624000 DEGREE
+dih8=        178.093000 DEGREE
+sc9=        1.768936 ANG
+scn9=        115.050940 DEGREE
+dih9=        200.746620 DEGREE
+hc10=        1.085455 ANG
+hcc10=        110.703240 DEGREE
+dih10=        77.254200 DEGREE
+hc11=        1.083207 ANG
+hcc11=        110.857720 DEGREE
+dih11=        317.660000 DEGREE
+hc12=        1.085303 ANG
+hcc12=        110.797620 DEGREE
+dih12=        197.115000 DEGREE
+hn13=        0.995490 ANG
+hnc13=        116.887380 DEGREE
+dih13=        183.376380 DEGREE
+hn14=        0.993624 ANG
+hnc14=        115.713480 DEGREE
+dih14=        184.337560 DEGREE
+hc15=        1.075542 ANG
+hcn15=        115.380660 DEGREE
+dih15=        203.289800 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(20+1) = energy(1)
+s1(20+1) = energy(2)
+t1(20+1) = energy(3)
+t2(20+1) = energy(4)
+t3(20+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_20.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(20+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(20+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(20+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(20+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(20+1) = energy(1)
+
+cn2=        1.379847 ANG
+nc3=        1.390269 ANG
+ncn3=        113.577041 DEGREE
+cn4=        1.383651 ANG
+cnc4=        126.485694 DEGREE
+dih4=        8.067592 DEGREE
+cc5=        1.466673 ANG
+ccn5=        115.351592 DEGREE
+dih5=        -4.076408 DEGREE
+cn6=        1.380612 ANG
+cnc6=        123.227592 DEGREE
+dih6=        347.536388 DEGREE
+cc7=        1.499677 ANG
+ccc7=        119.266612 DEGREE
+dih7=        185.598857 DEGREE
+oc8=        1.207557 ANG
+ocn8=        120.653000 DEGREE
+dih8=        177.361000 DEGREE
+sc9=        1.774445 ANG
+scn9=        114.692837 DEGREE
+dih9=        202.006551 DEGREE
+hc10=        1.085344 ANG
+hcc10=        110.725102 DEGREE
+dih10=        75.279510 DEGREE
+hc11=        1.083333 ANG
+hcc11=        110.858306 DEGREE
+dih11=        315.756000 DEGREE
+hc12=        1.085202 ANG
+hcc12=        110.801551 DEGREE
+dih12=        195.215000 DEGREE
+hn13=        0.995459 ANG
+hnc13=        116.929449 DEGREE
+dih13=        183.524449 DEGREE
+hn14=        0.993536 ANG
+hnc14=        115.765204 DEGREE
+dih14=        184.209388 DEGREE
+hc15=        1.075336 ANG
+hcn15=        115.341143 DEGREE
+dih15=        201.594490 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(21+1) = energy(1)
+s1(21+1) = energy(2)
+t1(21+1) = energy(3)
+t2(21+1) = energy(4)
+t3(21+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_21.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(21+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(21+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(21+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(21+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(21+1) = energy(1)
+
+cn2=        1.381082 ANG
+nc3=        1.391585 ANG
+ncn3=        113.482662 DEGREE
+cn4=        1.382961 ANG
+cnc4=        126.493108 DEGREE
+dih4=        9.163144 DEGREE
+cc5=        1.467649 ANG
+ccn5=        115.360144 DEGREE
+dih5=        -4.744856 DEGREE
+cn6=        1.380079 ANG
+cnc6=        123.136144 DEGREE
+dih6=        347.107216 DEGREE
+cc7=        1.500034 ANG
+ccc7=        119.136784 DEGREE
+dih7=        185.065374 DEGREE
+oc8=        1.207454 ANG
+ocn8=        120.682000 DEGREE
+dih8=        176.629000 DEGREE
+sc9=        1.779954 ANG
+scn9=        114.334734 DEGREE
+dih9=        203.266482 DEGREE
+hc10=        1.085233 ANG
+hcc10=        110.746964 DEGREE
+dih10=        73.304820 DEGREE
+hc11=        1.083459 ANG
+hcc11=        110.858892 DEGREE
+dih11=        313.852000 DEGREE
+hc12=        1.085101 ANG
+hcc12=        110.805482 DEGREE
+dih12=        193.315000 DEGREE
+hn13=        0.995428 ANG
+hnc13=        116.971518 DEGREE
+dih13=        183.672518 DEGREE
+hn14=        0.993448 ANG
+hnc14=        115.816928 DEGREE
+dih14=        184.081216 DEGREE
+hc15=        1.075130 ANG
+hcn15=        115.301626 DEGREE
+dih15=        199.899180 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(22+1) = energy(1)
+s1(22+1) = energy(2)
+t1(22+1) = energy(3)
+t2(22+1) = energy(4)
+t3(22+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_22.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(22+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(22+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(22+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(22+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(22+1) = energy(1)
+
+cn2=        1.382317 ANG
+nc3=        1.392901 ANG
+ncn3=        113.388283 DEGREE
+cn4=        1.382271 ANG
+cnc4=        126.500522 DEGREE
+dih4=        10.258696 DEGREE
+cc5=        1.468625 ANG
+ccn5=        115.368696 DEGREE
+dih5=        -5.413304 DEGREE
+cn6=        1.379546 ANG
+cnc6=        123.044696 DEGREE
+dih6=        346.678044 DEGREE
+cc7=        1.500391 ANG
+ccc7=        119.006956 DEGREE
+dih7=        184.531891 DEGREE
+oc8=        1.207351 ANG
+ocn8=        120.711000 DEGREE
+dih8=        175.897000 DEGREE
+sc9=        1.785463 ANG
+scn9=        113.976631 DEGREE
+dih9=        204.526413 DEGREE
+hc10=        1.085122 ANG
+hcc10=        110.768826 DEGREE
+dih10=        71.330130 DEGREE
+hc11=        1.083585 ANG
+hcc11=        110.859478 DEGREE
+dih11=        311.948000 DEGREE
+hc12=        1.085000 ANG
+hcc12=        110.809413 DEGREE
+dih12=        191.415000 DEGREE
+hn13=        0.995397 ANG
+hnc13=        117.013587 DEGREE
+dih13=        183.820587 DEGREE
+hn14=        0.993360 ANG
+hnc14=        115.868652 DEGREE
+dih14=        183.953044 DEGREE
+hc15=        1.074924 ANG
+hcn15=        115.262109 DEGREE
+dih15=        198.203870 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(23+1) = energy(1)
+s1(23+1) = energy(2)
+t1(23+1) = energy(3)
+t2(23+1) = energy(4)
+t3(23+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_23.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(23+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(23+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(23+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(23+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(23+1) = energy(1)
+
+cn2=        1.383552 ANG
+nc3=        1.394217 ANG
+ncn3=        113.293904 DEGREE
+cn4=        1.381581 ANG
+cnc4=        126.507936 DEGREE
+dih4=        11.354248 DEGREE
+cc5=        1.469601 ANG
+ccn5=        115.377248 DEGREE
+dih5=        -6.081752 DEGREE
+cn6=        1.379013 ANG
+cnc6=        122.953248 DEGREE
+dih6=        346.248872 DEGREE
+cc7=        1.500748 ANG
+ccc7=        118.877128 DEGREE
+dih7=        183.998408 DEGREE
+oc8=        1.207248 ANG
+ocn8=        120.740000 DEGREE
+dih8=        175.165000 DEGREE
+sc9=        1.790972 ANG
+scn9=        113.618528 DEGREE
+dih9=        205.786344 DEGREE
+hc10=        1.085011 ANG
+hcc10=        110.790688 DEGREE
+dih10=        69.355440 DEGREE
+hc11=        1.083711 ANG
+hcc11=        110.860064 DEGREE
+dih11=        310.044000 DEGREE
+hc12=        1.084899 ANG
+hcc12=        110.813344 DEGREE
+dih12=        189.515000 DEGREE
+hn13=        0.995366 ANG
+hnc13=        117.055656 DEGREE
+dih13=        183.968656 DEGREE
+hn14=        0.993272 ANG
+hnc14=        115.920376 DEGREE
+dih14=        183.824872 DEGREE
+hc15=        1.074718 ANG
+hcn15=        115.222592 DEGREE
+dih15=        196.508560 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(24+1) = energy(1)
+s1(24+1) = energy(2)
+t1(24+1) = energy(3)
+t2(24+1) = energy(4)
+t3(24+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_24.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(24+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(24+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(24+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(24+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(24+1) = energy(1)
+
+cn2=        1.384787 ANG
+nc3=        1.395533 ANG
+ncn3=        113.199525 DEGREE
+cn4=        1.380891 ANG
+cnc4=        126.515350 DEGREE
+dih4=        12.449800 DEGREE
+cc5=        1.470577 ANG
+ccn5=        115.385800 DEGREE
+dih5=        -6.750200 DEGREE
+cn6=        1.378480 ANG
+cnc6=        122.861800 DEGREE
+dih6=        345.819700 DEGREE
+cc7=        1.501105 ANG
+ccc7=        118.747300 DEGREE
+dih7=        183.464925 DEGREE
+oc8=        1.207145 ANG
+ocn8=        120.769000 DEGREE
+dih8=        174.433000 DEGREE
+sc9=        1.796481 ANG
+scn9=        113.260425 DEGREE
+dih9=        207.046275 DEGREE
+hc10=        1.084900 ANG
+hcc10=        110.812550 DEGREE
+dih10=        67.380750 DEGREE
+hc11=        1.083837 ANG
+hcc11=        110.860650 DEGREE
+dih11=        308.140000 DEGREE
+hc12=        1.084798 ANG
+hcc12=        110.817275 DEGREE
+dih12=        187.615000 DEGREE
+hn13=        0.995335 ANG
+hnc13=        117.097725 DEGREE
+dih13=        184.116725 DEGREE
+hn14=        0.993184 ANG
+hnc14=        115.972100 DEGREE
+dih14=        183.696700 DEGREE
+hc15=        1.074512 ANG
+hcn15=        115.183075 DEGREE
+dih15=        194.813250 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(25+1) = energy(1)
+s1(25+1) = energy(2)
+t1(25+1) = energy(3)
+t2(25+1) = energy(4)
+t3(25+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_25.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(25+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(25+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(25+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(25+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(25+1) = energy(1)
+
+cn2=        1.386022 ANG
+nc3=        1.396849 ANG
+ncn3=        113.105146 DEGREE
+cn4=        1.380201 ANG
+cnc4=        126.522764 DEGREE
+dih4=        13.545352 DEGREE
+cc5=        1.471553 ANG
+ccn5=        115.394352 DEGREE
+dih5=        -7.418648 DEGREE
+cn6=        1.377947 ANG
+cnc6=        122.770352 DEGREE
+dih6=        345.390528 DEGREE
+cc7=        1.501462 ANG
+ccc7=        118.617472 DEGREE
+dih7=        182.931442 DEGREE
+oc8=        1.207042 ANG
+ocn8=        120.798000 DEGREE
+dih8=        173.701000 DEGREE
+sc9=        1.801990 ANG
+scn9=        112.902322 DEGREE
+dih9=        208.306206 DEGREE
+hc10=        1.084789 ANG
+hcc10=        110.834412 DEGREE
+dih10=        65.406060 DEGREE
+hc11=        1.083963 ANG
+hcc11=        110.861236 DEGREE
+dih11=        306.236000 DEGREE
+hc12=        1.084697 ANG
+hcc12=        110.821206 DEGREE
+dih12=        185.715000 DEGREE
+hn13=        0.995304 ANG
+hnc13=        117.139794 DEGREE
+dih13=        184.264794 DEGREE
+hn14=        0.993096 ANG
+hnc14=        116.023824 DEGREE
+dih14=        183.568528 DEGREE
+hc15=        1.074306 ANG
+hcn15=        115.143558 DEGREE
+dih15=        193.117940 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(26+1) = energy(1)
+s1(26+1) = energy(2)
+t1(26+1) = energy(3)
+t2(26+1) = energy(4)
+t3(26+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_26.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(26+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(26+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(26+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(26+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(26+1) = energy(1)
+
+cn2=        1.387257 ANG
+nc3=        1.398165 ANG
+ncn3=        113.010767 DEGREE
+cn4=        1.379511 ANG
+cnc4=        126.530178 DEGREE
+dih4=        14.640904 DEGREE
+cc5=        1.472529 ANG
+ccn5=        115.402904 DEGREE
+dih5=        -8.087096 DEGREE
+cn6=        1.377414 ANG
+cnc6=        122.678904 DEGREE
+dih6=        344.961356 DEGREE
+cc7=        1.501819 ANG
+ccc7=        118.487644 DEGREE
+dih7=        182.397959 DEGREE
+oc8=        1.206939 ANG
+ocn8=        120.827000 DEGREE
+dih8=        172.969000 DEGREE
+sc9=        1.807499 ANG
+scn9=        112.544219 DEGREE
+dih9=        209.566137 DEGREE
+hc10=        1.084678 ANG
+hcc10=        110.856274 DEGREE
+dih10=        63.431370 DEGREE
+hc11=        1.084089 ANG
+hcc11=        110.861822 DEGREE
+dih11=        304.332000 DEGREE
+hc12=        1.084596 ANG
+hcc12=        110.825137 DEGREE
+dih12=        183.815000 DEGREE
+hn13=        0.995273 ANG
+hnc13=        117.181863 DEGREE
+dih13=        184.412863 DEGREE
+hn14=        0.993008 ANG
+hnc14=        116.075548 DEGREE
+dih14=        183.440356 DEGREE
+hc15=        1.074100 ANG
+hcn15=        115.104041 DEGREE
+dih15=        191.422630 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(27+1) = energy(1)
+s1(27+1) = energy(2)
+t1(27+1) = energy(3)
+t2(27+1) = energy(4)
+t3(27+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_27.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(27+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(27+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(27+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(27+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(27+1) = energy(1)
+
+cn2=        1.388492 ANG
+nc3=        1.399481 ANG
+ncn3=        112.916388 DEGREE
+cn4=        1.378821 ANG
+cnc4=        126.537592 DEGREE
+dih4=        15.736456 DEGREE
+cc5=        1.473505 ANG
+ccn5=        115.411456 DEGREE
+dih5=        -8.755544 DEGREE
+cn6=        1.376881 ANG
+cnc6=        122.587456 DEGREE
+dih6=        344.532184 DEGREE
+cc7=        1.502176 ANG
+ccc7=        118.357816 DEGREE
+dih7=        181.864476 DEGREE
+oc8=        1.206836 ANG
+ocn8=        120.856000 DEGREE
+dih8=        172.237000 DEGREE
+sc9=        1.813008 ANG
+scn9=        112.186116 DEGREE
+dih9=        210.826068 DEGREE
+hc10=        1.084567 ANG
+hcc10=        110.878136 DEGREE
+dih10=        61.456680 DEGREE
+hc11=        1.084215 ANG
+hcc11=        110.862408 DEGREE
+dih11=        302.428000 DEGREE
+hc12=        1.084495 ANG
+hcc12=        110.829068 DEGREE
+dih12=        181.915000 DEGREE
+hn13=        0.995242 ANG
+hnc13=        117.223932 DEGREE
+dih13=        184.560932 DEGREE
+hn14=        0.992920 ANG
+hnc14=        116.127272 DEGREE
+dih14=        183.312184 DEGREE
+hc15=        1.073894 ANG
+hcn15=        115.064524 DEGREE
+dih15=        189.727320 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(28+1) = energy(1)
+s1(28+1) = energy(2)
+t1(28+1) = energy(3)
+t2(28+1) = energy(4)
+t3(28+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_28.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(28+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(28+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(28+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(28+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(28+1) = energy(1)
+
+cn2=        1.389727 ANG
+nc3=        1.400797 ANG
+ncn3=        112.822009 DEGREE
+cn4=        1.378131 ANG
+cnc4=        126.545006 DEGREE
+dih4=        16.832008 DEGREE
+cc5=        1.474481 ANG
+ccn5=        115.420008 DEGREE
+dih5=        -9.423992 DEGREE
+cn6=        1.376348 ANG
+cnc6=        122.496008 DEGREE
+dih6=        344.103012 DEGREE
+cc7=        1.502533 ANG
+ccc7=        118.227988 DEGREE
+dih7=        181.330993 DEGREE
+oc8=        1.206733 ANG
+ocn8=        120.885000 DEGREE
+dih8=        171.505000 DEGREE
+sc9=        1.818517 ANG
+scn9=        111.828013 DEGREE
+dih9=        212.085999 DEGREE
+hc10=        1.084456 ANG
+hcc10=        110.899998 DEGREE
+dih10=        59.481990 DEGREE
+hc11=        1.084341 ANG
+hcc11=        110.862994 DEGREE
+dih11=        300.524000 DEGREE
+hc12=        1.084394 ANG
+hcc12=        110.832999 DEGREE
+dih12=        180.015000 DEGREE
+hn13=        0.995211 ANG
+hnc13=        117.266001 DEGREE
+dih13=        184.709001 DEGREE
+hn14=        0.992832 ANG
+hnc14=        116.178996 DEGREE
+dih14=        183.184012 DEGREE
+hc15=        1.073688 ANG
+hcn15=        115.025007 DEGREE
+dih15=        188.032010 DEGREE
+
+{multi
+occ,40
+closed,30
+wf,74,1,0;state,2
+wf,74,1,2;state,3
+maxiter,40;
+}
+
+s0(29+1) = energy(1)
+s1(29+1) = energy(2)
+t1(29+1) = energy(3)
+t2(29+1) = energy(4)
+t3(29+1) = energy(5)
+
+put,molden,2tThy_T1_dbl-well_2s-3t_29.mld;
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,0
+maxit,100}
+
+pts0(29+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,0
+maxit,100}
+
+pts1(29+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,1
+wf,74,1,2
+maxit,100}
+
+ptt1(29+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,2
+wf,74,1,2
+maxit,100}
+
+ptt2(29+1) = energy(1)
+
+{rs2c,shift=0.2,maxiti=200
+closed,30
+occ,40
+state,1,3
+wf,74,1,2
+maxit,100}
+
+ptt3(29+1) = energy(1)
+
+table, s0, s1, t1, t2, t3
+head, Ground, Sing1, Trip1, Trip2, Trip3
+
+table, pts0, pts1, ptt1, ptt2, ptt3
+head, 2_Ground, 2_Sing1, 2_Trip1, 2_Trip2, 2_Trip3
+---
